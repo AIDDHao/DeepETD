@@ -67,7 +67,7 @@ def predict_and_save_results(model, dataloader, protein_names, compound_names, o
     print(f"Predictions saved to {output_file}")
 
 if __name__ == "__main__":
-    data_dir = "data"
+    data_dir = "./data/predictdata.json"
     train_dataloader, val_dataloader, text_dataloader, text_compound_names, text_protein_names, disease_encoder, phenotype_encoder, subcellular_location_encoder = load_data(data_dir)
 
     model = InteractionPredictionModel(
