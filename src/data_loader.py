@@ -57,10 +57,10 @@ def load_data(data_dir):
     # Load samples
     with open(os.path.join(data_dir, 'test_samples_dataset.json'), 'r') as f:
         text_data = json.load(f)
-    with open(os.path.join(data_dir, 'positive_samples_dataset.json'), 'r') as f:
-        positive_data = json.load(f)
-    with open(os.path.join(data_dir, 'negative_samples_dataset.json'), 'r') as f:
-        negative_data = json.load(f)
+    with open(dataset_file, 'r') as f:
+        dataset = json.load(f)
+    positive_data = dataset[:870]
+    negative_data = dataset[870:]
 
     positive_samples = [(entry, 1) for entry in positive_data]
     negative_samples = [(entry, 0) for entry in negative_data]
